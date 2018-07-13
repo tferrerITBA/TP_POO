@@ -129,10 +129,8 @@ public class MainScreen {
 		initialize();
 		Syst.loadNewsFromInternet();
 		try {
-			CCL.updateCCL();
-		} catch (IOException e) {
-			e.printStackTrace();
-		} catch (JSONException e) {
+			//CCL.updateCCL();
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		Syst.getDollarsFromAmbito();
