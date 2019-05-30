@@ -47,7 +47,7 @@ public class Syst {
 	}
 	
 	/*
-	 * Métodos getFuturosFromFile, getCommoditiesFromFile, etc. nos hubiese gustado hacerlos genéricos pero tuvimos inconvenientes intentando crear la instancia de forma genérica, nos gustaría saber la forma de poder hacerlo 
+	 * Mï¿½todos getFuturosFromFile, getCommoditiesFromFile, etc. nos hubiese gustado hacerlos genï¿½ricos pero tuvimos inconvenientes intentando crear la instancia de forma genï¿½rica, nos gustarï¿½a saber la forma de poder hacerlo 
 	 */
 	
 	private static List<Stock> getStocksFromFile() {
@@ -166,12 +166,12 @@ public class Syst {
 			int added = 0;
 			for(int i = 5; i < parsedData.length; i+=10){
 				if(added < CANT_BONOS){
-					prices[added] = parsedData[i].replace(",", ".");
+					//prices[added] = parsedData[i].replace(",", ".");
 					added++;
 				}
 			}
 			for(int i = 0; i < CANT_BONOS; i++){
-				mervalBonos.add(new Bono(Double.parseDouble(prices[i]), tickers[i]));
+				//mervalBonos.add(new Bono(Double.parseDouble(prices[i]), tickers[i]));
 			}
 			return mervalBonos;
 		}
@@ -203,12 +203,12 @@ public class Syst {
 			String[] prices = new String[tickers.length];
 			int added = 0;
 			for(int i = 5; i < parsedData.length; i+=9){
-				prices[added] = parsedData[i].replace(",", ".");
+				//prices[added] = parsedData[i].replace(",", ".");
 				added++;
 			}
 			for(int i = 0; i < tickers.length; i++){
-				double auxDouble = Double.parseDouble(prices[i]);
-				mervalStocks.add(new Stock(auxDouble, tickers[i]));
+				//double auxDouble = Double.parseDouble(prices[i]);
+				//mervalStocks.add(new Stock(auxDouble, tickers[i]));
 			}
 			return mervalStocks;
 		}
@@ -279,7 +279,7 @@ public class Syst {
 	}
 	
 	/**
-	 * Get dollar prices via web scraping from Ámbito
+	 * Get dollar prices via web scraping from ï¿½mbito
 	 */
 	
 	public static void getDollarsFromAmbito(){
@@ -297,12 +297,12 @@ public class Syst {
 		}
 		if(loaded)
 		{
-	        dolarOficial = doc.select("div.row div.col-xs-12 div.dolarPrincipal div.floatleft div.ultimo big").first().text();
-	        dolarBlue = doc.select("div.row div.col-xs-12 div.dolarPrincipal div.floatleft div.ultimo big").text();
-	        dolarOficial = dolarOficial.split(" ")[0].replace(",", ".");
-	        dolarBlue = dolarBlue.split(" ")[1].replace(",", ".");
-	        dolarOficialStatic = Double.parseDouble(dolarOficial);
-	        dolarBlueStatic = Double.parseDouble(dolarBlue);
+//	        dolarOficial = doc.select("div.row div.col-xs-12 div.dolarPrincipal div.floatleft div.ultimo big").first().text();
+//	        dolarBlue = doc.select("div.row div.col-xs-12 div.dolarPrincipal div.floatleft div.ultimo big").text();
+//	        dolarOficial = dolarOficial.split(" ")[0].replace(",", ".");
+//	        dolarBlue = dolarBlue.split(" ")[1].replace(",", ".");
+	        dolarOficialStatic = Double.parseDouble("4.0");
+	        dolarBlueStatic = Double.parseDouble("9.0");
 		}
 		MainScreen.setDolar(dolarOficial, dolarBlue, CCL.getMinCCL());
 		MainScreen.setDolarConverter(dolarOficialStatic, dolarBlueStatic);

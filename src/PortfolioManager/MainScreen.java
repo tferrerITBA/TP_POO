@@ -541,7 +541,7 @@ public class MainScreen {
 		tblStocks.setVisible(false);
 		Syst.updateValuesFromInternet();
 		List<Stock> miLista = Syst.getStocks();
-		tblStocks.setModel(new StocksTableModel(miLista)); // ACÁ DESACTIVÉ PORQUE TIRA UN NULL POINTER EXCEPTION Y NO TE DEJA VER LA GRÁFICA
+		tblStocks.setModel(new StocksTableModel(miLista)); // ACï¿½ DESACTIVï¿½ PORQUE TIRA UN NULL POINTER EXCEPTION Y NO TE DEJA VER LA GRï¿½FICA
 		tblStocks.getColumnModel().getColumn(1).setResizable(false);
 		tblStocks.getColumnModel().getColumn(1).setPreferredWidth(101);
 		tblStocks.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -571,7 +571,7 @@ public class MainScreen {
 	    });
 		tblBonos.setVisible(false);
 		List<Bono> bonos = Syst.getBonos();
-		tblBonos.setModel(new BonosTableModel(bonos)); // ACÁ DESACTIVÉ PORQUE TIRA UN NULL POINTER EXCEPTION Y NO TE DEJA VER LA GRÁFICA
+		tblBonos.setModel(new BonosTableModel(bonos)); // ACï¿½ DESACTIVï¿½ PORQUE TIRA UN NULL POINTER EXCEPTION Y NO TE DEJA VER LA GRï¿½FICA
 		tblBonos.getColumnModel().getColumn(1).setResizable(false);
 		tblBonos.getColumnModel().getColumn(1).setPreferredWidth(101);
 		tblBonos.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -602,7 +602,7 @@ public class MainScreen {
 	    });
 		tblCommodities.setVisible(false);
 		List<Commodity> commodities = Syst.getCommodities();
-		tblCommodities.setModel(new CommoditiesTableModel(commodities)); // ACÁ DESACTIVÉ PORQUE TIRA UN NULL POINTER EXCEPTION Y NO TE DEJA VER LA GRÁFICA
+		tblCommodities.setModel(new CommoditiesTableModel(commodities)); // ACï¿½ DESACTIVï¿½ PORQUE TIRA UN NULL POINTER EXCEPTION Y NO TE DEJA VER LA GRï¿½FICA
 		tblCommodities.getColumnModel().getColumn(1).setResizable(false);
 		tblCommodities.getColumnModel().getColumn(1).setPreferredWidth(101);
 		tblCommodities.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -632,7 +632,7 @@ public class MainScreen {
 	    });
 		tblFuturos.setVisible(false);
 		List<Futuro> futuros = Syst.getFuturos();
-		tblFuturos.setModel(new FuturosTableModel(futuros)); // ACÁ DESACTIVÉ PORQUE TIRA UN NULL POINTER EXCEPTION Y NO TE DEJA VER LA GRÁFICA
+		tblFuturos.setModel(new FuturosTableModel(futuros)); // ACï¿½ DESACTIVï¿½ PORQUE TIRA UN NULL POINTER EXCEPTION Y NO TE DEJA VER LA GRï¿½FICA
 		tblFuturos.getColumnModel().getColumn(1).setResizable(false);
 		tblFuturos.getColumnModel().getColumn(1).setPreferredWidth(101);
 		tblFuturos.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -662,7 +662,7 @@ public class MainScreen {
 	    });
 		tblOpciones.setVisible(false);
 		List<Opcion> opciones = Syst.getOpciones();
-		tblOpciones.setModel(new OpcionesTableModel(opciones)); // ACÁ DESACTIVÉ PORQUE TIRA UN NULL POINTER EXCEPTION Y NO TE DEJA VER LA GRÁFICA
+		tblOpciones.setModel(new OpcionesTableModel(opciones)); // ACï¿½ DESACTIVï¿½ PORQUE TIRA UN NULL POINTER EXCEPTION Y NO TE DEJA VER LA GRï¿½FICA
 		tblOpciones.getColumnModel().getColumn(1).setResizable(false);
 		tblOpciones.getColumnModel().getColumn(1).setPreferredWidth(101);
 		tblOpciones.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -891,11 +891,11 @@ public class MainScreen {
     			tblHoldings.clearSelection();
     		}
     		catch(NumberFormatException e) {
-    			JOptionPane.showMessageDialog(new JFrame(), "Debe ingresar un número.", "Error", JOptionPane.ERROR_MESSAGE);
+    			JOptionPane.showMessageDialog(new JFrame(), "Debe ingresar un nï¿½mero.", "Error", JOptionPane.ERROR_MESSAGE);
     			tblHoldings.clearSelection();
     		}
     		catch(InsufficientFundsException e) {
-    			JOptionPane.showMessageDialog(new JFrame(), "¡Fondos insuficientes!", "Advertencia", JOptionPane.WARNING_MESSAGE);
+    			JOptionPane.showMessageDialog(new JFrame(), "ï¿½Fondos insuficientes!", "Advertencia", JOptionPane.WARNING_MESSAGE);
     			tblHoldings.clearSelection();
     		}
 		}
@@ -928,13 +928,13 @@ public class MainScreen {
 	}
 	
 	public static void setDolarConverter(double dolarOficial, double dolarBlue){
-		lblDolarOficial.setText("<html>Dólar oficial: " + dolarOficial + "</html>");
-		lblDolarBlue.setText("<html>Dólar blue: " + dolarBlue + "</html>");
+		lblDolarOficial.setText("<html>Dï¿½lar oficial: " + dolarOficial + "</html>");
+		lblDolarBlue.setText("<html>Dï¿½lar blue: " + dolarBlue + "</html>");
 	}
 	
 	public static void setDolar(String dolarOficial, String dolarBlue, double bestCCL){
-		lblMargenDolarOficial.setText("<html>" + (Math.round((Double.parseDouble(dolarOficial) - bestCCL) * 100.0) / 100.0) + "</html>");
-		lblMargenDolarBlue.setText("<html>" + (Math.round((Double.parseDouble(dolarBlue) - bestCCL) * 100.0) / 100.0) + "</html>");
+		//lblMargenDolarOficial.setText("<html>" + (Math.round((Double.parseDouble(dolarOficial) - bestCCL) * 100.0) / 100.0) + "</html>");
+		//lblMargenDolarBlue.setText("<html>" + (Math.round((Double.parseDouble(dolarBlue) - bestCCL) * 100.0) / 100.0) + "</html>");
 	}
 	
 	public static void setDolarCCL(String dolarCCL){
